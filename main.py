@@ -1,17 +1,28 @@
 print("STUDENT SCORE MANAGER")
 scores= []
-Number= input("How many scores? ")
+Number= int(input("How many scores? "))
 while Number> 0:
-    scorevalue= input("Enter score: ")
+    scorevalue= int(input("Enter score: "))
     if scorevalue<0:
-        print(input("Choose value between 0-100: "))
+        print(int(input("Choose value between 0-100: ")))
     elif scorevalue>100:
-        print(input("Choose value between 0-100: "))
+        print(int(input("Choose value between 0-100: ")))
     else:
         scores.append(scorevalue)
 print("PERFORMANCE SUMMARY")
 print("SCORES: ", scores)
-
+total= int(sum(scores))
+print(f"Total: {total}")
+average= total/Number
+print(f"Average: {average}")
+highest= max(scores)
+print(f"Highest: {highest}")
+lowest= min(scores)
+print(f"Lowest: {lowest}")
+passed= (scorevalue>= 50)
+print("Passed: ", len(passed))
+failed= (scorevalue<50)
+print("Failed: ", len(failed))
 
 
 
