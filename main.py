@@ -23,7 +23,14 @@ passed= (scorevalue>= 50)
 print("Passed: ", len(passed))
 failed= (scorevalue<50)
 print("Failed: ", len(failed))
-
+scoretoreplace= int(input("Enter score to replace: "))
+if scoretoreplace is not scorevalue:
+    print("Not among list of scores")
+else:
+    Newvalue= int(input("Enter new score: "))
+scores.remove(scoretoreplace)
+scores.append(Newvalue)
+print("Updated Scores: ", scores)
 
 
 
