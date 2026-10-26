@@ -1,7 +1,7 @@
 print("STUDENT SCORE MANAGER")
 scores= []
 Number= int(input("How many scores? "))
-while Number> 0:
+for number in range(Number):
     scorevalue= int(input("Enter score: "))
     if scorevalue<0:
         print(int(input("Choose value between 0-100: ")))
@@ -19,17 +19,17 @@ highest= max(scores)
 print(f"Highest: {highest}")
 lowest= min(scores)
 print(f"Lowest: {lowest}")
-passed= (scorevalue>= 50)
-print("Passed: ", len(passed))
-failed= (scorevalue<50)
-print("Failed: ", len(failed))
+passed= round(scorevalue>= 50)
+print("Passed: ", passed)
+failed= round(scorevalue< 50)
+print("Failed: ", failed)
 scoretoreplace= int(input("Enter score to replace: "))
 if scoretoreplace is not scorevalue:
     print("Not among list of scores")
 else:
     Newvalue= int(input("Enter new score: "))
-scores.remove(scoretoreplace)
-scores.append(Newvalue)
+    scores.remove(scoretoreplace)
+    scores.append(Newvalue)
 print("Updated Scores: ", scores)
 
 
