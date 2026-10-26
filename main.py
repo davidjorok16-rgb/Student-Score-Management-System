@@ -19,12 +19,12 @@ highest= max(scores)
 print(f"Highest: {highest}")
 lowest= min(scores)
 print(f"Lowest: {lowest}")
-passed= round(scorevalue>= 50)
-print("Passed: ", passed)
-failed= round(scorevalue< 50)
-print("Failed: ", failed)
+passed= len([scorevalue for scorevalue in scores if scorevalue>=50])
+print(f"Passed: {passed}")
+failed= len([scorevalue for scorevalue in scores if scorevalue<50])
+print(f"Failed: {failed}")
 scoretoreplace= int(input("Enter score to replace: "))
-if scoretoreplace is not scorevalue:
+if scoretoreplace not in scores:
     print("Not among list of scores")
 else:
     Newvalue= int(input("Enter new score: "))
